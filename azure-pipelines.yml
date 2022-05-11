@@ -3,18 +3,33 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
-
-pool:
-  name: 'Siebel'
+   stages:
+  - stage: Jmeter
+    jobs:
+    - job: Siebel_MemberInfo
+      displayName: 'MemberInfo'
+      pool:
+        name: 'Siebel'
         demands:
-        - agent.name -equals SEADVSBL19APL02
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+        - agent.name -equals SEADVSBL19APL02 
+      steps: 
+      - task: CopyFiles@2 
+        inputs: 
+          SourceFolder: '$(SourceDir)'
+          Contents: '**'
+          TargetFolder: '$(TargetDir)'
+          CleanTargetFolder: true
+      - task: Jmeter@2
+        displayName: 'JmeterMemberInfo'
+        name: "MemberInfo"
+        inputs:
+             targetType: 'filePath'
+             workingDirectory: $(TargetDir)
+             filePath: '$(TargetDir)/apache-jmeter-5.4.1/bin/MemberInfo.jmx'
+      - task: BatchScript@1
+        displayName: 'JmeterMemberInfo'
+        name: 'MemberInfo'
+        inputs:
+             workingFolder: $(TargetDir)
+             filename: '$(TargetDir)/apache-jmeter-5.4.1/MemberInfo.bat'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
