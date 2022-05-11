@@ -1,4 +1,7 @@
 
+- task: JMeterInstaller@0
+  inputs:
+    jmeterVersion: '5.4.2'
 stages:
   - stage: Jmeter
     jobs:
