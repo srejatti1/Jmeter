@@ -1,3 +1,6 @@
 - task: JMeterInstaller@0
   inputs:
     jmeterVersion: '5.4.2'
+- task: CmdLine@2
+  inputs:
+    script: 'jmeter -n -t MemberInfo.jmx -l results01.jtl -e -o reports01'
