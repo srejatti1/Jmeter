@@ -1,6 +1,64 @@
-- task: JMeterInstaller@0
-  inputs:
-    jmeterVersion: '5.4.2'
-- task: CmdLine@2
-  inputs:
-    script: 'jmeter -n -t MemberInfo.jmx -l results01.jtl -e -o reports01'
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@srejatti1
+Alaska-ECommerce /
+siebeladminscripts
+Private
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+
+    Insights
+
+siebeladminscripts/Pipelines/dev-eaibounce-pipeline.yml
+@spolepally
+spolepally Updated Display Names
+Latest commit a1ee338 23 days ago
+History
+1 contributor
+43 lines (34 sloc) 1.02 KB
+name: 'DEV-EAI Bounce- $(Date:yyyyMMdd).$(Rev:r)'
+  
+variables:
+  - group: SiebelVariables
+
+trigger: none 
+pr: none 
+
+stages:
+  - stage: Jmeter
+    jobs:
+    - job: Siebel_MemberInfo
+      displayName: 'MemberInfo'
+      pool:
+        name: 'Siebel'
+        demands:
+        - agent.name -equals SEADVSBL19APL02 
+      steps: 
+      - task: CopyFiles@2 
+        inputs: 
+          SourceFolder: '$(SourceDir)'
+          Contents: '**'
+          TargetFolder: '$(TargetDir)'
+          CleanTargetFolder: true
+      - task: Jmeter@2
+        displayName: 'JmeterMemberInfo'
+        name: "MemberInfo"
+        inputs:
+             targetType: 'filePath'
+             workingDirectory: $(TargetDir)
+             filePath: '$(TargetDir)/apache-jmeter-5.4.1/bin/MemberInfo.jmx'
+      - task: BatchScript@1
+        displayName: 'JmeterMemberInfo'
+        name: 'MemberInfo'
+        inputs:
+             workingFolder: $(TargetDir)
+             filename: '$(TargetDir)/apache-jmeter-5.4.1/MemberInfo.bat'
