@@ -4,3 +4,6 @@ targetType: 'filePath'
 workingDirectory: $(TargetDir)
 filePath: '$(TargetDir)/apache-jmeter-5.4.1/bin/MemberInfo.jmx'
 jmeterVersion: '5.4.2'
+- task: BatchScript@1
+  inputs:
+    filename: 'C:\apache-jmeter-5.4.1\MemberInfo.bat'
