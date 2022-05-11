@@ -1,4 +1,7 @@
 - task: JMeterInstaller@0
+- task: CmdLine@2
+  inputs:
+    script: 'C:\apache-jmeter-5.4.1\bin\jmeter -n -t C:\apache-jmeter-5.4.1\bin\MemberInfoQA.jmx -l C:\results\MemberInfo.jtl -e -o C:\results\MemberInfo'
 inputs:
 targetType: 'filePath'
 workingDirectory: $(TargetDir)
