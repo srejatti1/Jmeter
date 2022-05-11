@@ -7,8 +7,9 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
-
+  name: 'Siebel'
+        demands:
+        - agent.name -equals SEADVSBL19APL02
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
