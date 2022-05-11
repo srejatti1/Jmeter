@@ -11,12 +11,5 @@ stages:
       pool:
         name: 'Siebel'
         demands:
-        - agent.name -equals SEADVSBL19APL02 
-      steps: 
-      - task: CopyFiles@2 
-        inputs: 
-          SourceFolder: '$(SourceDir)'
-          Contents: '**'
-          TargetFolder: '$(TargetDir)'
-          CleanTargetFolder: true
+        - agent.name -equals SEADVSBL19APL02
           
