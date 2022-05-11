@@ -1,3 +1,22 @@
-- task: JMeterInstaller@0
-  inputs:
-    jmeterVersion: '5.4.2'
+name: 'Jmeter- $(Date:yyyyMMdd).$(Rev:r)'
+  
+trigger: none 
+pr: none 
+
+stages:
+  - stage: Jmeter
+    jobs:
+    - job: Siebel_Jmeter
+      displayName: 'Siebel_Jmeter'
+      pool:
+        name: 'Siebel'
+        demands:
+        - agent.name -equals SEADVSBL19APL02 
+      steps: 
+      - task: CopyFiles@2 
+        inputs: 
+          SourceFolder: '$(SourceDir)'
+          Contents: '**'
+          TargetFolder: '$(TargetDir)'
+          CleanTargetFolder: true
+          
