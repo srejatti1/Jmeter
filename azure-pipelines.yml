@@ -1,5 +1,5 @@
 - task: JMeterInstaller@0
-  inputs:
+inputs:
 targetType: 'filePath'
 workingDirectory: $(TargetDir)
 filePath: '$(TargetDir)/apache-jmeter-5.4.1/bin/MemberInfo.jmx'
