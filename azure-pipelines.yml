@@ -32,4 +32,3 @@
         inputs:
              workingFolder: $(TargetDir)
              filename: '$(TargetDir)/apache-jmeter-5.4.1/MemberInfo.bat'
-
