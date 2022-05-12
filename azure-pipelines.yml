@@ -13,9 +13,7 @@ stages:
         demands:
         - agent.name -equals SEADVSBL19APL02
         - task: Jmeter@0
-        displayName: 'JmeterMemberInfo'
-        name: "MemberInfo"
-        inputs:
+                inputs:
              targetType: 'filePath'
              workingDirectory: $(TargetDir)
              filePath: 'C:/apache-jmeter-5.4.1/bin/MemberInfo.jmx'
