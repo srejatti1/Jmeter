@@ -13,5 +13,5 @@ stages:
         - agent.name -equals SEADVSBL19APL02
 - task: BatchScript@1
   inputs:
-    filename: 'C:\apache-jmeter-5.4.1\MemberInfo.bat'
-    workingFolder: 'C:\results'
+    filename: 'C:/apache-jmeter-5.4.1/MemberInfo.bat'
+    workingFolder: 'C:/results'
