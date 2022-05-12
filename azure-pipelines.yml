@@ -24,11 +24,11 @@ stages:
         name: "MemberInfo"
         inputs:
              targetType: 'filePath'
-             workingDirectory: $(JmeterDir)
+             workingDirectory: $(TargetDir)
              filePath: 'apache-jmeter-5.4.1/bin/MemberInfo.jmx'
       - task: BatchScript@1
         displayName: 'JmeterMemberInfo'
         name: 'MemberInfo'
         inputs:
-             workingFolder: $(JmeterBat)
+             workingFolder: $(TargetDir)
              filename: 'C:/apache-jmeter-5.4.1/MemberInfo.bat'      
