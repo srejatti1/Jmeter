@@ -7,6 +7,6 @@ pool:
         name: 'Siebel'
         demands:
         - agent.name -equals SEADVSBL19APL02
-- task: BatchScript@1
+- task: JMeterInstaller@0
   inputs:
-    filename: 'C:\apache-jmeter-5.4.1\MemberInfo.bat'
+    jmeterVersion: '5.4.2'
