@@ -12,7 +12,7 @@ stages:
         demands:
         - agent.name -equals SEADVSBL19APL02
     - task: BatchScript@1
-       displayName: 'JmeterScript'
-       name: 'JmeterScript'
-       inputs:
+      displayName: 'JmeterScript'
+      name: 'JmeterScript'
+      inputs:
            filename: 'C:/apache-jmeter-5.4.1/MemberInfo.bat'
