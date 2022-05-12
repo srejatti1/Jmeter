@@ -2,8 +2,12 @@ name: 'Jmeter- $(Date:yyyyMMdd).$(Rev:r)'
   
 trigger: none 
 pr: none 
-
-pool:
+stages:
+  - stage: Jmeter
+    jobs:
+    - job: Siebel_Jmeter
+      displayName: 'Siebel_Jmeter'
+      pool:
         name: 'Siebel'
         demands:
         - agent.name -equals SEADVSBL19APL02
