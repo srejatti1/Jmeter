@@ -19,4 +19,16 @@ stages:
           Contents: '**'
           TargetFolder: '$(TargetDir)'
           CleanTargetFolder: true
-          
+          - task: JMeterInstaller@0
+        displayName: 'JmeterMemberInfo'
+        name: "MemberInfo"
+        inputs:
+             targetType: 'filePath'
+             workingDirectory: $(JmeterDir)
+             filePath: 'apache-jmeter-5.4.1/bin/MemberInfo.jmx'
+      - task: BatchScript@1
+        displayName: 'JmeterMemberInfo'
+        name: 'MemberInfo'
+        inputs:
+             workingFolder: $(JmeterBat)
+             filename: 'C:/apache-jmeter-5.4.1/MemberInfo.bat'      
