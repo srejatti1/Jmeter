@@ -12,7 +12,7 @@ stages:
         name: 'Siebel'
         demands:
         - agent.name -equals SEADVSBL19APL02
-        - task: Jmeter@2
+        - task: Jmeter@0
         displayName: 'JmeterMemberInfo'
         name: "MemberInfo"
         inputs:
