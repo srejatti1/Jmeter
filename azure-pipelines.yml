@@ -20,8 +20,8 @@ stages:
              workingDirectory: $(TargetDir)
              filePath: 'C:/apache-jmeter-5.4.1/bin/MemberInfo.jmx'
       - task: BatchScript@1
-        displayName: 'memberinfo'
-        name: 'MemberInfo'
+        displayName: 'Memberinfo1'
+        name: 'MemberInfo1'
         inputs:
              workingFolder: $(TargetDir)
              filename: 'C:/apache-jmeter-5.4.1/MemberInfo.bat'
