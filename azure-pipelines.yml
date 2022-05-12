@@ -12,8 +12,6 @@ stages:
         name: 'Siebel'
         demands:
         - agent.name -equals SEADVSBL19APL02
-        - task: Jmeter@0
-                inputs:
-             targetType: 'filePath'
-             workingDirectory: $(TargetDir)
-             filePath: 'C:/apache-jmeter-5.4.1/bin/MemberInfo.jmx'
+- task: CmdLine@2
+  inputs:
+    script: 'C:\apache-jmeter-5.4.1\bin\jmeter -n -t C:\apache-jmeter-5.4.1\bin\MemberInfoQA.jmx -l C:\results\MemberInfo.jtl -e -o C:\results\MemberInfo'
