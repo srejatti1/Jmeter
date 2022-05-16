@@ -1,5 +1,7 @@
- trigger: none 
- pr: none 
+name: 'Jmeter- $(Date:yyyyMMdd).$(Rev:r)'
+  
+trigger: none 
+pr: none 
 stages:
   - stage: Jmeter
     jobs:
@@ -9,3 +11,7 @@ stages:
         name: 'Siebel'
         demands:
         - agent.name -equals SEADVSBL19APL02
+steps: 
+- task: BatchScript@1
+  inputs:
+    filename: 'C:\apache-jmeter-5.4.1\MemberInfo.bat'
