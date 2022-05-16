@@ -13,5 +13,7 @@ stages:
         - agent.name -equals SEADVSBL19APL02
         steps: 
          - task: BatchScript@1
+           displayName: 'JmeterMemberInfo Test'
+           name: 'JmeterMemberInfo'
            inputs:
             filename: 'C:\apache-jmeter-5.4.1\MemberInfo.bat'
