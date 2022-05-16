@@ -1,9 +1,5 @@
  trigger: none 
-pr: none 
-steps: 
-- task: BatchScript@1
-  inputs:
-    filename: 'C:\apache-jmeter-5.4.1\MemberInfo.bat'
+ pr: none 
 stages:
   - stage: Jmeter
     jobs:
