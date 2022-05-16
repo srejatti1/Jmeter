@@ -1,4 +1,14 @@
+
 steps: 
 - task: BatchScript@1
   inputs:
     filename: 'C:\apache-jmeter-5.4.1\MemberInfo.bat'
+stages:
+  - stage: Jmeter
+    jobs:
+    - job: Siebel_Jmeter
+      displayName: 'Siebel_Jmeter'
+      pool:
+        name: 'Siebel'
+        demands:
+        - agent.name -equals SEADVSBL19APL02
