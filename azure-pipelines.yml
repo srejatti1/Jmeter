@@ -16,7 +16,7 @@ stages:
            displayName: 'JmeterMemberInfo Test'
            name: 'JmeterBatchscript'
            inputs:
-             filename: 'C:/apache-jmeter-5.4.1/MemberInfo.bat'
+             filename: 'C:\apache-jmeter-5.4.1\MemberInfo.bat'
              modifyEnvironment: true
-             workingFolder: 'C:/apache-jmeter-5.4.1/'
+             workingFolder: 'C:\apache-jmeter-5.4.1\'
              failOnStandardError: true
