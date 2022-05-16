@@ -10,7 +10,7 @@ stages:
       pool:
         name: 'Siebel'
         demands:
-        - agent.name -equals SEADVSBL19APL02
+        - agent.name -equals SEADVSBL19APL01
         steps: 
          - task: BatchScript@1
            displayName: 'JmeterMemberInfo Test'
