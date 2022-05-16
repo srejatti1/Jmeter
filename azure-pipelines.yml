@@ -1,4 +1,6 @@
 name: 'Jmeter- $(Date:yyyyMMdd).$(Rev:r)'
+variables:
+  - group: SiebelVariables
   
 trigger: none 
 pr: none 
