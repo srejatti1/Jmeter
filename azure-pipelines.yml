@@ -6,7 +6,7 @@ stages:
   - stage: Jmeter
     jobs:
     - job: Siebel_Jmeter
-      displayName: 'Siebel_Jmeter'
+      displayName: 'SiebelJmeter'
       pool:
         name: 'Siebel'
         demands:
@@ -14,6 +14,6 @@ stages:
         steps: 
          - task: BatchScript@1
            displayName: 'JmeterMemberInfo Test'
-           name: 'JmeterMemberInfo'
+           name: 'MemberInfoJmeter'
            inputs:
             filename: 'C:\apache-jmeter-5.4.1\MemberInfo.bat'
