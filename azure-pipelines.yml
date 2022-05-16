@@ -11,7 +11,7 @@ stages:
         name: 'Siebel'
         demands:
         - agent.name -equals SEADVSBL19APL01
-        steps: 
+      steps: 
          - task: BatchScript@1
            displayName: 'JmeterMemberInfo Test'
            name: 'JmeterBatchscript'
