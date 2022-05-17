@@ -19,4 +19,4 @@ stages:
           name: 'JmeterBatchscript'
           inputs:
             script: |
-              C:\apache-jmeter-5.4.1\bin\jmeter -n -t C:\apache-jmeter-5.4.1\bin\MemberInfo.jmx -l C:\results\MemberInfo.jtl -e -o C:\results\MemberInfo
+              C:\apache-jmeter-5.4.1\bin\jmeter -Jjmeter.save.saveservice.output_format=csv -Jjmeter.reportgenerator.apdex_satisfied_threshold=1500 -n -t C:\apache-jmeter-5.4.1\bin\MemberInfo.jmx -l C:\results\MemberInfo.jtl -e -o C:\results\MemberInfo
