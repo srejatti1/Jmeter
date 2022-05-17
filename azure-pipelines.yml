@@ -19,5 +19,5 @@ stages:
           name: 'JmeterBatchscript'
           inputs:
             script: |
-              c:\apache-jmeter-5.4.1\bin\jmeter -n -t C:\apache-jmeter-5.4.1\bin\MemberInfo.jmx -l C:\results\MemberInfo.jtl -e -o C:\results\MemberInfo
+              '$(devjmeter)/bin/jmeter -n -t '$(devjmeter)/bin/MemberInfo.jmx -l $(results)/MemberInfo.jtl -e -o $(results)/MemberInfo
                     pause
