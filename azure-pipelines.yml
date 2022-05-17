@@ -1,6 +1,6 @@
 name: 'Jmeter- $(Date:yyyyMMdd).$(Rev:r)'
 variables:
-  - group: SiebelVariables
+  - group: Jmeter
   
 trigger: none 
 pr: none 
@@ -18,6 +18,6 @@ stages:
            displayName: 'JmeterMemberInfo Test'
            name: 'JmeterBatchscript'
            inputs:
-             filename: '$(DevJmeter)/MemberInfo.bat'
+             filename: '$(devjmeter)/MemberInfo.bat'
              modifyEnvironment: true
              failOnStandardError: true
