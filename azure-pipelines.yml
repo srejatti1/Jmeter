@@ -1,4 +1,6 @@
 name: 'Jmeter- $(Date:yyyyMMdd).$(Rev:r)'
+variables:
+  - group: Jmeter
   
 trigger: none 
 pr: none 
@@ -10,13 +12,12 @@ stages:
       pool:
         name: 'Siebel'
         demands:
-        - agent.name -equals SEADVSBL19APL01
+        - agent.name -equals SEADVSBL19APL02
       steps: 
-         - task: BatchScript@1
-           displayName: 'JmeterMemberInfo Test'
-           name: 'JmeterBatchscript'
-           inputs:
-             filename: 'C:\apache-jmeter-5.4.1\MemberInfo.bat'
-             modifyEnvironment: true
-             workingFolder: 'C:\apache-jmeter-5.4.1\'
-             failOnStandardError: true
+        - task: CmdLine@2
+          displayName: 'JmeterMemberInfo Test'
+          name: 'JmeterBatchscript'
+          inputs:
+            script: |
+              c:\apache-jmeter-5.4.1\bin\jmeter -n -t C:\apache-jmeter-5.4.1\bin\MemberInfo.jmx -l C:\results\MemberInfo.jtl -e -o C:\results\MemberInfo
+                    pause
